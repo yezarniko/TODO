@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.checked = todos[i].status === "Complete" ? true : false;
       deleteButton.className = "deleteButton";
       deleteButton.textContent = "Delete";
+      deleteButton.id = todos[i].id;
       todoDiv.appendChild(checkboxContainer);
       checkboxContainer.appendChild(checkbox);
       checkboxContainer.appendChild(deleteButton);
@@ -55,6 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }
         });
+        console.log(new_todos);
+        localStorage.setItem("todos", JSON.stringify(new_todos));
+        window.location.reload();
+      });
+
+      deleteButton.addEventListener("click", (e) => {
+        let todos = JSON.parse(localStorage.getItem("todos"));
+        let new_todos = [...todos];
+        new_todos = new_todos.filter((todo) => e.target.id != todo.id);
+        console.log(e.target.id);
         console.log(new_todos);
         localStorage.setItem("todos", JSON.stringify(new_todos));
         window.location.reload();
