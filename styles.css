@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
+.container {
+  border: 1px solid #ddd;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+  font-size: 1.5rem;
+}
+
+nav div {
+  color: teal;
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+nav div:hover {
+  scale: 1.1;
+}
+
+nav a {
+  color: teal;
+  text-decoration: none;
+}
+
+.todo {
+  width: 70%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.start-date {
+  width: 12%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  select: none;
+}
+
+.todo-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: between;
+  text-align: center;
+  padding: 1em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.todo-table-body {
+  display: flex;
+  align-items: center;
+  justify-content: between;
+  text-align: center;
+  padding: 0.9em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.todo-table-header div:first-child,
+.todo-table-body div:first-child {
+  width: 15%;
+}
+
+.todo-table-header div:nth-child(2),
+.todo-table-body div:nth-child(2) {
+  width: 25%;
+}
+
+.todo-table-header div:nth-child(3),
+.todo-table-body div:nth-child(3) {
+  width: 20%;
+}
+
+.todo-table-header div:last-child,
+.todo-table-body div:last-child {
+  flex-grow: 2;
+}
+
+.todo-table {
+  width: 95%;
+  height: 90%;
+  margin: 0 auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.todo-table-body {
+}
+
+.addTodo {
+  width: 70%;
+  height: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+h2 {
+  color: teal;
+  padding: 2em;
+}
+
+.addTodoForm {
+  width: 70%;
+  margin: 0 3em;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formFields {
+  width: 20%;
+  text-align: right;
+  margin-right: 2em;
+}
+
+.formFields div {
+  margin-bottom: 2.5em;
+}
+
+.formData {
+  width: 80%;
+}
+
+.formData div {
+  margin-bottom: 2.5em;
+}
+
+.button {
+  width: 150px;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1em;
+  border: 1px solid black;
+  color: #fff;
+  font-weight: 600;
+  background: teal;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 0.8em 0.5em;
+  width: 50%;
+  outline: none;
+  font-size: 1.1rem;
+}
+
+input[type="date"] {
+  font-size: 1rem;
+}
+
+textarea {
+  font-size: 1rem;
+  padding: 1em;
+  outline: none;
+}
