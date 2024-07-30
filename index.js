@@ -1,9 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Your code here
   let todos = JSON.parse(localStorage.getItem("todos"));
+  let startDate = document.querySelector(".start-date");
   if (todos) {
     // Get the reference to the container div
     var todoContainer = document.querySelector(".todo-table");
+    let date = null;
+
+    startDate.addEventListener("change", (e) => {
+      date = e.target.value;
+    });
+
+    if (date) {
+      let new_todos = [...todos];
+
+      new_todos.filter((todo) => todo.date === date);
+
+      console.log(new_todos);
+    }
 
     // Loop through the list of todo items
     for (var i = 0; i < todos.length; i++) {
