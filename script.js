@@ -16,6 +16,7 @@ function setTodo(e) {
 
     let new_todos = [
       {
+        id: new Date().toISOString(),
         date: form_date.value,
         task: form_task.value,
         status: "progress",
@@ -24,12 +25,14 @@ function setTodo(e) {
     ];
 
     localStorage.setItem("todos", JSON.stringify(new_todos));
+    window.location.assign("/");
   } else {
     let todos = JSON.parse(localStorage.getItem("todos"));
     console.log(todos);
 
     let new_todos = [
       {
+        id: new Date().toISOString(),
         date: form_date.value,
         task: form_task.value,
         status: "progress",

@@ -28,6 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
       priorityDiv.textContent = todos[i].comment;
       todoDiv.appendChild(priorityDiv);
 
+      var checkboxContainer = document.createElement("div");
+      var checkbox = document.createElement("input");
+      checkbox.id = todos[i].id;
+      var deleteButton = document.createElement("span");
+      checkbox.type = "checkbox";
+      checkbox.name = "myCheckbox";
+      checkbox.value = true;
+      deleteButton.className = "deleteButton";
+      deleteButton.textContent = "Delete";
+      todoDiv.appendChild(checkboxContainer);
+      checkboxContainer.appendChild(checkbox);
+      checkboxContainer.appendChild(deleteButton);
+
+      checkbox.addEventListener("change", (e) => {
+        let todos = JSON.parse(localStorage.getItem("todos"));
+        let new_todos = [...todos];
+        new_todos.map((todo) => {
+          console.log(e.target.id);
+        });
+      });
+
       // Append the todoDiv to the container
       todoContainer.appendChild(todoDiv);
     }
