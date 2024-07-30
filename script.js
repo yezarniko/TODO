@@ -19,7 +19,7 @@ function setTodo(e) {
         id: new Date().toISOString(),
         date: form_date.value,
         task: form_task.value,
-        status: "progress",
+        status: "Progreess",
         comment: form_comment.value,
       },
     ];
@@ -35,7 +35,7 @@ function setTodo(e) {
         id: new Date().toISOString(),
         date: form_date.value,
         task: form_task.value,
-        status: "progress",
+        status: "Progreess",
         comment: form_comment.value,
       },
       ...todos,

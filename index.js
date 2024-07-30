@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.type = "checkbox";
       checkbox.name = "myCheckbox";
       checkbox.value = true;
+      checkbox.checked = todos[i].status === "Complete" ? true : false;
       deleteButton.className = "deleteButton";
       deleteButton.textContent = "Delete";
       todoDiv.appendChild(checkboxContainer);
@@ -46,7 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let new_todos = [...todos];
         new_todos.map((todo) => {
           console.log(e.target.id);
+          if (e.target.id === todo.id) {
+            if (todo.status === "Complete") {
+              todo.status = "Progreess";
+            } else {
+              todo.status = "Complete";
+            }
+          }
         });
+        console.log(new_todos);
+        localStorage.setItem("todos", JSON.stringify(new_todos));
+        window.location.reload();
       });
 
       // Append the todoDiv to the container
